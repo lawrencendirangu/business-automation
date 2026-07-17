@@ -4,6 +4,7 @@ import {
   Gauge,
   MessageSquare,
   Settings,
+  User,
   Users,
   WandSparkles,
 } from 'lucide-react'
@@ -22,6 +23,7 @@ export const navigationItems: NavigationItem[] = [
   { label: 'Conversations', icon: MessageSquare },
   { label: 'Automations', icon: WandSparkles },
   { label: 'Analytics', icon: ChartColumnBig },
+  { label: 'Profile', icon: User },
   { label: 'Settings', icon: Settings },
 ]
 

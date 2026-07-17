@@ -3,6 +3,7 @@ import AgentCard from '../components/AgentCard'
 import AutomationCard from '../components/AutomationCard'
 import InboxPanel from '../components/InboxPanel'
 import Navbar from '../components/Navbar'
+import ProfileCard from '../components/ProfileCard'
 import SectionCard from '../components/SectionCard'
 import Sidebar from '../components/Sidebar'
 import StatCard from '../components/StatCard'
@@ -68,6 +69,7 @@ function DashboardPage() {
     activeSection === 'Dashboard' || activeSection === 'Conversations' || activeSection === 'Customers'
   const showAutomations = activeSection === 'Dashboard' || activeSection === 'Automations'
   const showAgents = activeSection === 'Dashboard' || activeSection === 'AI Agents'
+  const showProfile = activeSection === 'Profile'
 
   return (
     <main className="mx-auto flex w-full max-w-[1700px] gap-4 p-4 sm:gap-5 sm:p-5 lg:gap-6 lg:p-6">
@@ -88,7 +90,14 @@ function DashboardPage() {
           </section>
         ) : null}
 
-        <section className="grid grid-cols-1 gap-4 xl:grid-cols-10">
+        {showProfile ? (
+          <section className="max-w-md">
+            <ProfileCard />
+          </section>
+        ) : null}
+
+        {!showProfile ? (
+          <section className="grid grid-cols-1 gap-4 xl:grid-cols-10">
           {showConversations ? (
             <div className={showAutomations || showAgents ? 'xl:col-span-7' : 'xl:col-span-10'}>
               <InboxPanel
@@ -151,6 +160,7 @@ function DashboardPage() {
             </div>
           ) : null}
         </section>
+        ) : null}
       </div>
     </main>
   )

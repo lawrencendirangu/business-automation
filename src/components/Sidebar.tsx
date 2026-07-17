@@ -1,5 +1,6 @@
 import { Sparkles } from 'lucide-react'
 import type { NavigationItem } from '../types/dashboard'
+import { useState, useEffect } from 'react'
 
 interface SidebarProps {
   items: NavigationItem[]
@@ -8,6 +9,25 @@ interface SidebarProps {
 }
 
 function Sidebar({ items, activeItem, onSelect }: SidebarProps) {
+  const [profileImage, setProfileImage] = useState<string>('')
+
+  useEffect(() => {
+    const saved = localStorage.getItem('profileImage')
+    if (saved) setProfileImage(saved)
+
+    // Listen for profile image updates
+    const handleStorageChange = () => {
+      const updated = localStorage.getItem('profileImage')
+      if (updated) setProfileImage(updated)
+    }
+
+    window.addEventListener('storage', handleStorageChange)
+    window.addEventListener('profileImageUpdated', handleStorageChange)
+    return () => {
+      window.removeEventListener('storage', handleStorageChange)
+      window.removeEventListener('profileImageUpdated', handleStorageChange)
+    }
+  }, [])
   return (
     <aside className="flex w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft md:w-72 md:p-5">
       <div className="mb-6 flex items-center gap-3 border-b border-slate-800 pb-4">
@@ -47,8 +67,12 @@ function Sidebar({ items, activeItem, onSelect }: SidebarProps) {
       </nav>
 
       <div className="mt-auto flex items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-sm font-semibold text-white">
-          BO
+        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 text-sm font-semibold text-white overflow-hidden">
+          {profileImage ? (
+            <img src={profileImage} alt="Profile" className="w-full h-full object-cover" />
+          ) : (
+            'BO'
+          )}
         </div>
         <div>
           <p className="text-sm font-semibold text-white">Al-Masar AI Automation</p>

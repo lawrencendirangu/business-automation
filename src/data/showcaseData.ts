@@ -1,0 +1,232 @@
+import type { InboxConversation, InboxMessage, InboxNotificationSummary } from '../types/dashboard'
+
+export const showcaseConversations: InboxConversation[] = [
+  {
+    id: 'demo-1',
+    customerName: 'Ahmed Al-Rashid',
+    customerPhone: '+971501234567',
+    unreadCount: 3,
+    needsHuman: true,
+    lastHumanRequestAt: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
+    lastMessagePreview: 'I would like to know more about your AI automation services for my restaurant.',
+    lastMessageAt: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
+    messageCount: 8,
+    aiMode: 'ai',
+  },
+  {
+    id: 'demo-2',
+    customerName: 'Sara Johnson',
+    customerPhone: '+971509876543',
+    unreadCount: 0,
+    needsHuman: false,
+    lastHumanRequestAt: null,
+    lastMessagePreview: 'Great! Can you send me the pricing details for the WhatsApp bot package?',
+    lastMessageAt: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+    messageCount: 12,
+    aiMode: 'ai',
+  },
+  {
+    id: 'demo-3',
+    customerName: 'Mohammed Al-Farsi',
+    customerPhone: '+971552345678',
+    unreadCount: 1,
+    needsHuman: false,
+    lastHumanRequestAt: null,
+    lastMessagePreview: 'We need a chatbot that handles booking, payments, and customer support.',
+    lastMessageAt: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
+    messageCount: 5,
+    aiMode: 'ai',
+  },
+  {
+    id: 'demo-4',
+    customerName: 'Layla Nasser',
+    customerPhone: 'web_layla_website_001',
+    unreadCount: 0,
+    needsHuman: false,
+    lastHumanRequestAt: null,
+    lastMessagePreview: 'Thank you! I will share this with my team and get back to you.',
+    lastMessageAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    messageCount: 20,
+    aiMode: 'agent',
+  },
+  {
+    id: 'demo-5',
+    customerName: 'Carlos Mendes',
+    customerPhone: '+971561234567',
+    unreadCount: 2,
+    needsHuman: false,
+    lastHumanRequestAt: null,
+    lastMessagePreview: 'How long does it take to set up the full automation system?',
+    lastMessageAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+    messageCount: 7,
+    aiMode: 'ai',
+  },
+]
+
+export const showcaseMessages: Record<string, InboxMessage[]> = {
+  'demo-1': [
+    {
+      id: 'msg-1-1',
+      sender: 'customer',
+      content: 'Hello! I heard about Al-Masar from a friend. Can you tell me about your services?',
+      timestamp: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-2',
+      sender: 'ai',
+      content: 'Welcome to Al-Masar AI Automation! 🌟 We help businesses automate their customer interactions using AI-powered WhatsApp bots and web chat assistants. Our services include:\n\n✅ WhatsApp AI Bots\n✅ Website Chat Assistants\n✅ Lead Generation Automation\n✅ Appointment Booking Systems\n\nWhat type of business do you run?',
+      timestamp: new Date(Date.now() - 29 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-3',
+      sender: 'customer',
+      content: 'I have a restaurant chain with 3 locations in Dubai. We get a lot of reservation inquiries.',
+      timestamp: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-4',
+      sender: 'ai',
+      content: 'That\'s perfect for our automation! 🍽️ For restaurants, we can set up:\n\n1. **Automated Reservations** - Customers book directly via WhatsApp\n2. **Menu Inquiries** - AI answers questions about your menu 24/7\n3. **Order Status Updates** - Automated confirmations and reminders\n4. **Multi-location Support** - Route customers to the right branch\n\nWould you like to see a demo of how it works?',
+      timestamp: new Date(Date.now() - 20 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-5',
+      sender: 'customer',
+      content: 'Yes definitely! Also what\'s the cost? I need to discuss with my business partner.',
+      timestamp: new Date(Date.now() - 15 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-6',
+      sender: 'ai',
+      content: 'Our packages start from AED 1,500/month for a basic WhatsApp bot. For a restaurant chain with 3 locations, I\'d recommend our Business Plan at AED 3,500/month which includes:\n\n• Unlimited messages\n• 3 bot configurations\n• Reservation management\n• Analytics dashboard\n• Priority support\n\nShall I connect you with our team for a detailed proposal?',
+      timestamp: new Date(Date.now() - 10 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-7',
+      sender: 'customer',
+      content: 'I would like to know more about your AI automation services for my restaurant.',
+      timestamp: new Date(Date.now() - 7 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-1-8',
+      sender: 'system',
+      content: 'Customer requested to speak with a human agent.',
+      timestamp: new Date(Date.now() - 5 * 60 * 1000).toISOString(),
+    },
+  ],
+  'demo-2': [
+    {
+      id: 'msg-2-1',
+      sender: 'customer',
+      content: 'Hi! I found your website. Do you offer WhatsApp bot services?',
+      timestamp: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-2',
+      sender: 'ai',
+      content: 'Yes! We specialize in WhatsApp AI bots and automation. What kind of business are you in?',
+      timestamp: new Date(Date.now() - 59 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-3',
+      sender: 'customer',
+      content: 'I run an e-commerce store. We get hundreds of messages daily about orders.',
+      timestamp: new Date(Date.now() - 55 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-4',
+      sender: 'ai',
+      content: 'Perfect use case! Our e-commerce bot can handle order tracking, returns, product inquiries, and payments automatically. What\'s your current message volume?',
+      timestamp: new Date(Date.now() - 50 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-5',
+      sender: 'customer',
+      content: 'About 300-500 messages per day. Currently handled by 3 staff.',
+      timestamp: new Date(Date.now() - 40 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-6',
+      sender: 'ai',
+      content: 'Our bot can handle 90% of those automatically, freeing your staff for complex issues only. You could reduce support costs significantly. Want a free consultation?',
+      timestamp: new Date(Date.now() - 35 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-2-7',
+      sender: 'customer',
+      content: 'Great! Can you send me the pricing details for the WhatsApp bot package?',
+      timestamp: new Date(Date.now() - 18 * 60 * 1000).toISOString(),
+    },
+  ],
+  'demo-3': [
+    {
+      id: 'msg-3-1',
+      sender: 'customer',
+      content: 'Hello, I need a complete automation solution for my real estate company.',
+      timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-3-2',
+      sender: 'ai',
+      content: 'Welcome! Real estate is one of our specialties. We can automate property inquiries, viewing scheduling, lead qualification, and follow-ups. Tell me more about your needs.',
+      timestamp: new Date(Date.now() - 115 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-3-3',
+      sender: 'customer',
+      content: 'We need a chatbot that handles booking, payments, and customer support.',
+      timestamp: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
+    },
+  ],
+  'demo-4': [
+    {
+      id: 'msg-4-1',
+      sender: 'customer',
+      content: 'I visited your website and I\'m very impressed with the capabilities.',
+      timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-4-2',
+      sender: 'ai',
+      content: 'Thank you so much! We\'d love to help automate your business. What industry are you in?',
+      timestamp: new Date(Date.now() - 295 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-4-3',
+      sender: 'agent',
+      content: 'Hi! This is Lawrence from Al-Masar. I took over from our AI to give you a personalized walkthrough. How can I help?',
+      timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-4-4',
+      sender: 'customer',
+      content: 'Thank you! I will share this with my team and get back to you.',
+      timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    },
+  ],
+  'demo-5': [
+    {
+      id: 'msg-5-1',
+      sender: 'customer',
+      content: 'Hi, I want to build an AI assistant for my travel agency.',
+      timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-5-2',
+      sender: 'ai',
+      content: 'Great choice! Travel agencies are a perfect fit. We can automate flight inquiries, package quotes, visa guidance, and booking confirmations. What destinations do you specialize in?',
+      timestamp: new Date(Date.now() - 295 * 60 * 1000).toISOString(),
+    },
+    {
+      id: 'msg-5-3',
+      sender: 'customer',
+      content: 'How long does it take to set up the full automation system?',
+      timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+    },
+  ],
+}
+
+export const showcaseNotifications: InboxNotificationSummary = {
+  needsHumanCount: 1,
+  unreadTotal: 6,
+}
