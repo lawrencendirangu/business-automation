@@ -72,6 +72,11 @@ export default function ProfileCard() {
 
   const handleChangePassword = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!supabase) {
+      setMessage({ type: 'error', text: 'Authentication is not configured for this deployment' })
+      return
+    }
+
     if (newPassword !== confirmPassword) {
       setMessage({ type: 'error', text: 'Passwords do not match' })
       return
@@ -101,6 +106,11 @@ export default function ProfileCard() {
 
   const handleUpdateEmail = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (!supabase) {
+      setMessage({ type: 'error', text: 'Authentication is not configured for this deployment' })
+      return
+    }
+
     if (!newEmail || newEmail === user?.email) {
       setMessage({ type: 'error', text: 'Please enter a new email address' })
       return

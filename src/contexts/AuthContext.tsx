@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { User } from '@supabase/supabase-js'
-import { supabase } from '../lib/supabase'
+import { isSupabaseConfigured, supabase } from '../lib/supabase'
 
 interface AuthContextType {
   user: User | null
@@ -18,6 +18,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if (!supabase) {
+      setLoading(false)
+      return
+    }
+
     // Check current session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setUser(session?.user ?? null)
@@ -35,16 +40,28 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const signUp = async (email: string, password: string) => {
+    if (!supabase || !isSupabaseConfigured) {
+      throw new Error('Authentication is not configured for this deployment')
+    }
+
     const { error } = await supabase.auth.signUp({ email, password })
     if (error) throw error
   }
 
   const signIn = async (email: string, password: string) => {
+    if (!supabase || !isSupabaseConfigured) {
+      throw new Error('Authentication is not configured for this deployment')
+    }
+
     const { error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) throw error
   }
 
   const signOut = async () => {
+    if (!supabase || !isSupabaseConfigured) {
+      throw new Error('Authentication is not configured for this deployment')
+    }
+
     const { error } = await supabase.auth.signOut()
     if (error) throw error
   }

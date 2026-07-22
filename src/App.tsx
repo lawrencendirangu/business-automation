@@ -7,7 +7,7 @@ import ShowcasePage from './pages/ShowcasePage'
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <AuthProvider>
         <Routes>
           {/* Public Routes */}
@@ -25,8 +25,8 @@ function App() {
           />
 
           {/* Default redirect */}
-          <Route path="/" element={<Navigate to="/admin" replace />} />
-          <Route path="*" element={<Navigate to="/admin" replace />} />
+          <Route path="/" element={<Navigate to="/showcase" replace />} />
+          <Route path="*" element={<Navigate to="/showcase" replace />} />
         </Routes>
       </AuthProvider>
     </Router>
