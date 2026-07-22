@@ -44,22 +44,22 @@ export default function ShowcasePage() {
   return (
     <div className="min-h-screen bg-slate-100">
       {/* Demo Banner */}
-      <div className="bg-gradient-to-r from-purple-700 to-indigo-700 text-white px-4 py-2.5 text-center text-sm font-medium flex items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center justify-center gap-2 bg-gradient-to-r from-purple-700 to-indigo-700 px-4 py-2.5 text-center text-sm font-medium text-white sm:gap-3">
         <span className="inline-flex items-center gap-1.5 bg-white/20 px-2 py-0.5 rounded-full text-xs font-semibold">
           <Sparkles className="w-3 h-3" /> DEMO
         </span>
-        <span>This is a live showcase of the Al-Masar AI Automation Dashboard — using sample data.</span>
+        <span className="max-w-3xl">This is a live showcase of the Al-Masar AI Automation Dashboard — using sample data.</span>
         <Link
           to="/login"
-          className="inline-flex items-center gap-1 bg-white text-purple-700 hover:bg-purple-50 px-3 py-1 rounded-full text-xs font-semibold transition-colors ml-2"
+          className="ml-0 inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-semibold text-purple-700 transition-colors hover:bg-purple-50 sm:ml-2"
         >
           <Lock className="w-3 h-3" /> Admin Login
         </Link>
       </div>
 
-      <main className="mx-auto flex w-full max-w-[1700px] gap-4 p-4 sm:gap-5 sm:p-5 lg:gap-6 lg:p-6">
+      <main className="mx-auto flex w-full max-w-[1700px] flex-col gap-4 p-4 sm:gap-5 sm:p-5 lg:flex-row lg:gap-6 lg:p-6">
         {/* Sidebar */}
-        <aside className="flex w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft md:w-72 md:p-5">
+        <aside className="flex w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft lg:w-72 lg:p-5">
           <div className="mb-6 flex items-center gap-3 border-b border-slate-800 pb-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/20">
               <Sparkles className="h-5 w-5 text-brand" />
@@ -70,8 +70,8 @@ export default function ShowcasePage() {
             </div>
           </div>
 
-          <nav className="mb-6 overflow-x-auto md:overflow-visible">
-            <ul className="flex min-w-max gap-2 md:min-w-0 md:flex-col">
+          <nav className="mb-6 overflow-x-auto lg:overflow-visible">
+            <ul className="flex min-w-max gap-2 lg:min-w-0 lg:flex-col">
               {navItems.map((item) => {
                 const Icon = item.icon
                 const isActive = item.label === activeSection
@@ -116,13 +116,13 @@ export default function ShowcasePage() {
                   Al-Masar AI Automation — Live inbox and customer management.
                 </p>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center md:w-auto">
                 <input
                   type="text"
                   placeholder="Search conversations..."
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
-                  className="min-w-[200px] rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 outline-none focus:border-brand/50 focus:bg-white"
+                  className="w-full rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-700 outline-none focus:border-brand/50 focus:bg-white sm:min-w-[200px]"
                 />
                 <Link
                   to="/login"

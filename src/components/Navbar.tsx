@@ -57,8 +57,8 @@ function Navbar({ searchValue, onSearchChange }: NavbarProps) {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-end gap-3">
-          <label className="flex min-w-[220px] items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 transition-colors focus-within:border-brand/50 focus-within:bg-white">
+        <div className="flex w-full flex-wrap items-center gap-3 md:w-auto md:justify-end">
+          <label className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 transition-colors focus-within:border-brand/50 focus-within:bg-white sm:min-w-[220px] md:w-auto">
             <Search className="h-4 w-4 text-slate-400" />
             <input
               type="text"

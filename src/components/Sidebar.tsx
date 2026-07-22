@@ -29,7 +29,7 @@ function Sidebar({ items, activeItem, onSelect }: SidebarProps) {
     }
   }, [])
   return (
-    <aside className="flex w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft md:w-72 md:p-5">
+    <aside className="flex w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft lg:w-72 lg:p-5">
       <div className="mb-6 flex items-center gap-3 border-b border-slate-800 pb-4">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/20">
           <Sparkles className="h-5 w-5 text-brand" />
@@ -40,8 +40,8 @@ function Sidebar({ items, activeItem, onSelect }: SidebarProps) {
         </div>
       </div>
 
-      <nav className="mb-6 overflow-x-auto md:overflow-visible">
-        <ul className="flex min-w-max gap-2 md:min-w-0 md:flex-col">
+      <nav className="mb-6 overflow-x-auto lg:overflow-visible">
+        <ul className="flex min-w-max gap-2 lg:min-w-0 lg:flex-col">
           {items.map((item) => {
             const Icon = item.icon
             const isActive = item.label === activeItem
