@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import {
+  getInboxApiBaseUrl,
   getInboxConversationDetails,
   getInboxConversations,
   getInboxNotifications,
@@ -14,6 +15,7 @@ import type {
 } from '../types/dashboard'
 
 const POLL_INTERVAL_MS = 5000
+const inboxApiBaseUrl = getInboxApiBaseUrl()
 
 interface InboxDataResult {
   conversations: InboxConversation[]
@@ -75,7 +77,7 @@ export function useInboxData(): InboxDataResult {
         return stillExists ? current : nextConversations[0].id
       })
     } catch {
-      setError('Cannot reach inbox backend at localhost:8010. Showing last synced data.')
+      setError(`Cannot reach inbox backend at ${inboxApiBaseUrl}. Showing last synced data.`)
     } finally {
       if (isInitialLoad) {
         setIsLoadingConversations(false)
