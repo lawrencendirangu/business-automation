@@ -49,7 +49,7 @@ function Navbar({ searchValue, onSearchChange }: NavbarProps) {
 
   return (
     <header className="rounded-xl2 border border-slate-200/80 bg-white p-5 shadow-soft sm:p-6">
-      <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight text-slate-900">Dashboard</h1>
           <p className="mt-1 text-sm text-slate-500">
@@ -57,8 +57,8 @@ function Navbar({ searchValue, onSearchChange }: NavbarProps) {
           </p>
         </div>
 
-        <div className="flex w-full flex-wrap items-center gap-3 md:w-auto md:justify-end">
-          <label className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 transition-colors focus-within:border-brand/50 focus-within:bg-white sm:min-w-[220px] md:w-auto">
+        <div className="flex w-full flex-wrap items-center gap-3 xl:w-auto xl:justify-end">
+          <label className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 transition-colors focus-within:border-brand/50 focus-within:bg-white sm:min-w-[220px] xl:w-auto">
             <Search className="h-4 w-4 text-slate-400" />
             <input
               type="text"
