@@ -29,7 +29,7 @@ function Sidebar({ items, activeItem, onSelect }: SidebarProps) {
     }
   }, [])
   return (
-    <aside className="flex w-full max-w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft xl:w-72 xl:p-5">
+    <aside className="mobile-force-sidebar flex w-full max-w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft xl:w-72 xl:p-5">
       <div className="mb-6 flex items-center gap-3 border-b border-slate-800 pb-4">
         <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/20">
           <Sparkles className="h-5 w-5 text-brand" />

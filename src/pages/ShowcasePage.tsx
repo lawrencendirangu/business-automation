@@ -57,9 +57,9 @@ export default function ShowcasePage() {
         </Link>
       </div>
 
-      <main className="mx-auto flex w-full max-w-[1700px] flex-col gap-4 overflow-x-hidden p-4 sm:gap-5 sm:p-5 xl:flex-row xl:gap-6 xl:p-6">
+      <main className="mobile-force-stack mx-auto flex w-full max-w-[1700px] flex-col gap-4 overflow-x-hidden p-4 sm:gap-5 sm:p-5 xl:flex-row xl:gap-6 xl:p-6">
         {/* Sidebar */}
-        <aside className="flex w-full max-w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft xl:w-72 xl:p-5">
+        <aside className="mobile-force-sidebar flex w-full max-w-full flex-col rounded-3xl bg-slate-950 p-4 text-slate-100 shadow-soft xl:w-72 xl:p-5">
           <div className="mb-6 flex items-center gap-3 border-b border-slate-800 pb-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand/20">
               <Sparkles className="h-5 w-5 text-brand" />
@@ -109,14 +109,14 @@ export default function ShowcasePage() {
         <div className="flex min-w-0 flex-1 flex-col gap-4 sm:gap-5 lg:gap-6">
           {/* Navbar */}
           <header className="rounded-xl2 border border-slate-200/80 bg-white p-5 shadow-soft sm:p-6">
-            <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+            <div className="mobile-force-header flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
               <div>
                 <h1 className="text-2xl font-semibold tracking-tight text-slate-900">Dashboard</h1>
                 <p className="mt-1 text-sm text-slate-500">
                   Al-Masar AI Automation — Live inbox and customer management.
                 </p>
               </div>
-              <div className="flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center xl:w-auto">
+              <div className="mobile-force-controls flex w-full flex-col items-stretch gap-3 sm:flex-row sm:items-center xl:w-auto">
                 <input
                   type="text"
                   placeholder="Search conversations..."

@@ -32,3 +32,27 @@ body {
 #root {
   min-height: 100vh;
 }
+
+/* Force stacked dashboard layout on phones/tablets even when webviews report unusual widths. */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-force-stack {
+    flex-direction: column !important;
+  }
+
+  .mobile-force-sidebar {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .mobile-force-header {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+
+  .mobile-force-controls {
+    width: 100% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}

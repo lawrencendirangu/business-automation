@@ -72,7 +72,7 @@ function DashboardPage() {
   const showProfile = activeSection === 'Profile'
 
   return (
-    <main className="mx-auto flex w-full max-w-[1700px] flex-col gap-4 overflow-x-hidden p-4 sm:gap-5 sm:p-5 xl:flex-row xl:gap-6 xl:p-6">
+    <main className="mobile-force-stack mx-auto flex w-full max-w-[1700px] flex-col gap-4 overflow-x-hidden p-4 sm:gap-5 sm:p-5 xl:flex-row xl:gap-6 xl:p-6">
       <Sidebar
         items={navigationItems}
         activeItem={activeSection}
