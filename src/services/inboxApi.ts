@@ -4,10 +4,9 @@ import type {
   InboxNotificationSummary,
 } from '../types/dashboard'
 
-const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:8787').replace(
-  /\/$/,
-  '',
-)
+// env var injected by Vercel at build time; fall back to the live Railway backend
+const MARKER_9919 = 'https://whatsapp-bot-production-9919.up.railway.app'
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL ?? MARKER_9919).replace(/\/$/, '') || MARKER_9919
 
 export function getInboxApiBaseUrl(): string {
   return apiBaseUrl
