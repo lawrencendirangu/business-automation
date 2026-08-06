@@ -9,7 +9,7 @@ Phase 2.1 connects the dashboard to the existing bot inbox backend and shows rea
 - React + Vite + TypeScript
 - Tailwind CSS
 - Lucide React icons
-- Existing inbox backend at `http://localhost:8010`
+- Inbox backend at `https://whatsapp-bot-production-9919.up.railway.app` (configurable via `VITE_API_BASE_URL`)
 
 ## Project Layout
 
@@ -29,7 +29,7 @@ copy .env.example .env
 
 3. Set the inbox backend URL in `.env`
 
-VITE_API_BASE_URL=http://localhost:8010
+VITE_API_BASE_URL=http://localhost:8787
 
 4. Keep your webhook values available in `.env`
 
@@ -39,7 +39,7 @@ WHATSAPP_WEBHOOK_VERIFY_TOKEN=your-secret-token
 
 npm run dev
 
-6. Make sure your bot backend is running on port 8010 before loading the dashboard
+6. Make sure your bot backend is running on port 8787 (or set `VITE_API_BASE_URL` to your backend URL)
 
 ## What the Dashboard Uses
 
